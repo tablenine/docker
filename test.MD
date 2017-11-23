@@ -35,7 +35,7 @@ docker rm commitss
 ### mysql
 
 ```sh
-docker run --name mysqltest -p 3306:3306 -v D:\mysql:/var/lib/mysql -v D:\myconfig:/etc/mysql/conf.d  -e MYSQL_ROOT_PASSWORD=system -d mysql:5.6.37
+docker run --name mysqltest -p 3306:3306 -v D:\mysql:/var/lib/mysql -v D:\myconfig:/etc/mysql/conf.d  -e MYSQL_ROOT_PASSWORD='password' -d mysql:5.6.37
 
 docker exec -it mysqltest bash
 ```
