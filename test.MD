@@ -12,7 +12,7 @@ docker rm smexTest
 ### WebFm docker
 
 ```sh
-docker run -i -d --name webfmTest -p39443:443 -v C:\Users\SQI소프트\git\webFM_v1.0:/www/webFM webfmtest:1.0
+docker run -i -d --name webfmTest -p39443:443 -v C:\www\webFM_v1.0:/www/webFM webfmtest:1.0
 docker exec -it webfmTest /bin/bash
 docker exec -it webfmTest . /etc/ssbr.profile
 docker exec -it webfmTest sh /www/webFM/webFM_start.sh
