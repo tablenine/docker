@@ -23,6 +23,24 @@ docker exec some-mariadb sh -c 'exec mysqldump -uroot -p"$MYSQL_ROOT_PASSWORD" d
 ```
 
 
+## utfmd4 설정
+### 서버 character-set 확인
+``` mysql
+show variables where variable_name like 'character\_set\_%' or variable_name like 'collection%';
+```
 
-### 로그 확인
+### 테이블 변경
+``` mysql
+ALTER TABLE '테이블명' MODIFY COLUMN '칼럼명' varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+alter table '테이블명' default character set = utf8mb4 collate = utf8mb4_unicode_ci;
+ALTER DATABASE 'db명' CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
+```
 
+### 설정파일 추가
+my.cnf 
+[client]
+default-character-set=utf8mb4
+[mysqld]
+character-set-server = utf8mb4
+[mysql]
+default-character-set=utf8mb4
