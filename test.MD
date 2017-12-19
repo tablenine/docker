@@ -39,3 +39,10 @@ docker run --name mysqltest -p 3306:3306 -v D:\mysql:/var/lib/mysql -v D:\myconf
 
 docker exec -it mysqltest bash
 ```
+
+### ldap 
+``` sh
+docker run -i -d --name ldapTest -p 389:389 -p 636:636 -v /home/share:/home/share centos:6.8 /bin/bash
+docker exec -i -t ldapTest /bin/bash
+/etc/init.d/slapd start
+```
