@@ -1,7 +1,7 @@
 ### Smex docker
 
 ```sh
-docker run -i -d --name smexTest -p3925:25 -v D:\www\smex_v1.0:/www/smex smextest:1.0
+docker run -i -d --name smexTest -p 3925:25 -v D:\www\smex_v1.0:/www/smex smextest:1.0
 docker exec -it smexTest /bin/bash
 docker exec -it smexTest sh /www/smex/smex_start.sh
 docker exec -it smexTest sh /www/smex/smex_stop.sh
@@ -12,7 +12,7 @@ docker rm smexTest
 ### WebFm docker
 
 ```sh
-docker run -i -d --name webfmTest -p39443:443 -v C:\www\webFM_v1.0:/www/webFM webfmtest:1.0
+docker run -i -d --name webfmTest -p 39443:443 -v C:\www\webFM_v1.0:/www/webFM webfmtest:1.0
 docker exec -it webfmTest /bin/bash
 docker exec -it webfmTest . /etc/ssbr.profile
 docker exec -it webfmTest sh /www/webFM/webFM_start.sh
